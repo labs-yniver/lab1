@@ -10,6 +10,7 @@ class Quadrate: public Object_d2{
         Quadrate(const Quadrate &copy);
         uint32_t getSquare();
         std::string getSizes();
+        std::string getImg();
         void setSizes(uint32_t sizes[], uint32_t len);
         void save(std::ofstream& file);// сохранение в файл
         void load(std::ifstream& file);// загрузка из файла

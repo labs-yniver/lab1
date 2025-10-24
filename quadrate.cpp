@@ -30,6 +30,16 @@ return std::string("Size Quadrate: height = ")+std::to_string(height)+
 std::string("; width = ")+std::to_string(width)+std::string(";") ;
 }
 
+std::string Quadrate::getImg()
+{
+    std::string str = "\n";
+    str = str + std::string("+------+\n");
+    str = str + std::string("|      |\n");
+    str = str + std::string("|      |\n");
+    str = str + std::string("+------+\n");
+return str;
+}
+
 void Quadrate::setSizes(uint32_t sizes[], uint32_t len)
 {
     if(len<2){

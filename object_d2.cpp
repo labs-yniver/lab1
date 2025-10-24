@@ -20,6 +20,7 @@ void Object_d2::show()
 {
     std::cout << "{" << std::endl;
     std::cout << "name: "<< getName() << std::endl;
+    std::cout << "img: "<< getImg() << std::endl;
     std::cout << "sizes: "<< getSizes() << std::endl;
     std::cout << "square: "<< getSquare() << std::endl;
     std::cout << "}" << std::endl;
