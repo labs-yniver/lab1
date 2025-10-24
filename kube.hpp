@@ -1,26 +1,28 @@
-#ifndef __Quadrate__
-#define __Quadrate__
+#ifndef __Kube__
+#define __Kube__
 
-#include "object_d2.hpp"
+#include "object_d3.hpp"
 
-class Quadrate: public Object_d2{
+class Kube: public Object_d3{
     public:
-        ~Quadrate();
-        Quadrate();
-        Quadrate(const Quadrate &copy);
+        ~Kube();
+        Kube();
+        Kube(const Kube &copy);
         uint32_t getSquare();
+        uint32_t getVolume();
         std::string getSizes();
         std::string getImg();
         std::string getType();
         void setSizes(uint32_t sizes[], uint32_t len);
         void save(std::ofstream& file);// сохранение в файл
         void load(std::ifstream& file);// загрузка из файла
-        const std::string type = "Quadrate";
+        const std::string type = "Kube";
     private:
         uint32_t height = 0;
         uint32_t width = 0;
+        uint32_t long_ = 0;
 
 };
 
-#include "quadrate.cpp"
+#include "Kube.cpp"
 #endif

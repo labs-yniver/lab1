@@ -11,6 +11,10 @@ class Figure{
         virtual void show() = 0;//вывод информации о фигуре
         virtual void save(std::ofstream& file) = 0;// сохранение в файл
         virtual void load(std::ifstream& file) = 0;// загрузка из файла
+        virtual std::string getImg() = 0;
+        virtual std::string getType() = 0;
+        virtual uint32_t getSquare() = 0;
+        virtual std::string getSizes() = 0;
         virtual ~Figure();
         void setName(std::string new_name);
         std::string getName() const;
