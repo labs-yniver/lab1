@@ -40,6 +40,11 @@ std::string Quadrate::getImg()
 return str;
 }
 
+std::string Quadrate::getType()
+{
+return type;
+}
+
 void Quadrate::setSizes(uint32_t sizes[], uint32_t len)
 {
     if(len<2){
