@@ -5,6 +5,17 @@ Object_d2::~Object_d2()
    std::cout << "Object_d2 deleted!" << std::endl; 
 }
 
+Object_d2::Object_d2()
+{
+   std::cout << "Object_d2 create simple!" << std::endl; 
+
+}
+
+Object_d2::Object_d2(const Object_d2 & copy)
+{
+   std::cout << "Object_d2 create copy!" << std::endl; 
+}
+
 void Object_d2::show()
 {
     std::cout << "{" << std::endl;

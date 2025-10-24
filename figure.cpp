@@ -1,5 +1,17 @@
 #include "figure.hpp"
 
+Figure::Figure()
+{
+   std::cout << "Figure created simple!" << std::endl; 
+
+}
+
+Figure::Figure(const Figure & copy)
+{
+   std::cout << "Figure created copy!" << std::endl; 
+   name = copy.getName();
+}
+
 Figure::~Figure()
 {
    std::cout << "Figure deleted!" << std::endl; 
@@ -7,14 +19,14 @@ Figure::~Figure()
 
 void Figure::setName(std::string new_name)
 {
-   if(!name.empty()){
-      name = new_name;
+   if(new_name.empty()){
+      throw std::string("Empty name");
    }else{
-      throw "Empty name";
+      name = new_name;
    }
 }
 
-std::string Figure::getName()
+std::string Figure::getName() const
 {
 return name;
 }
