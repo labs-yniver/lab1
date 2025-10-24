@@ -41,8 +41,20 @@ void Quadrate::setSizes(uint32_t sizes[], uint32_t len)
 
 void Quadrate::save(std::ofstream & file)
 {
+    std::string line;
+    file<<getName()<<std::endl;
+    file<<std::to_string(height)<<std::endl;
+    file<<std::to_string(width)<<std::endl;
 }
 
 void Quadrate::load(std::ifstream & file)
 {
+    std::string line;
+    std::getline(file, line);
+    setName(line);
+    std::getline(file, line);
+    height = std::stoul(line);
+    std::getline(file, line);
+    width = std::stoul(line);;
+
 }

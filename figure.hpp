@@ -1,6 +1,7 @@
 #ifndef __Figure__
 #define __Figure__
 #include <iostream>
+#include <fstream>
 // #include <ofstream>
 
 class Figure{
