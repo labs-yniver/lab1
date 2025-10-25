@@ -94,6 +94,7 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeindex": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "list": "cpp"
   }
 }

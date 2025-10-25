@@ -11,7 +11,7 @@ class Object_d3: public Figure{
         virtual ~Object_d3();
         Object_d3();
         Object_d3(const Object_d3& copy);
-        void show();
+        std::string getInfo();
 };
 
 #include "Object_d3.cpp"

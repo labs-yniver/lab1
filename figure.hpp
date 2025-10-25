@@ -8,7 +8,8 @@ class Figure{
     public:
         Figure();
         Figure(const Figure &copy);
-        virtual void show() = 0;//вывод информации о фигуре
+        void show();//вывод информации о фигуре
+        virtual std::string getInfo() = 0;//вывод информации о фигуре
         virtual void save(std::ofstream& file) = 0;// сохранение в файл
         virtual void load(std::ifstream& file) = 0;// загрузка из файла
         virtual std::string getImg() = 0;
@@ -21,6 +22,10 @@ class Figure{
     private:
         std::string name;
 };
-
+// std::ostream& operator << (std::ostream &os, const Figure &person);
+// std::ostream & operator<<(std::ostream & os, const Figure & fig)
+// {
+//    return fig.getInfo();
+// }
 #include "figure.cpp"
 #endif

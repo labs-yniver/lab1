@@ -16,14 +16,16 @@ Object_d3::Object_d3(const Object_d3 & copy)
    std::cout << "Object_d3 create copy!" << std::endl; 
 }
 
-void Object_d3::show()
+std::string Object_d3::getInfo()
 {
-    std::cout << "{" << std::endl;
-    std::cout << "name: "<< getName() << std::endl;
-    std::cout << "type: "<< getType() << std::endl;
-    std::cout << "img: "<< getImg() << std::endl;
-    std::cout << "sizes: "<< getSizes() << std::endl;
-    std::cout << "square: "<< getSquare() << std::endl;
-    std::cout << "volume: "<< getVolume() << std::endl;
-    std::cout << "}" << std::endl;
+   std::string str;
+    str += "{" +std::string("\n");
+    str += "type: "+getType() +std::string("\n");
+    str += "name: "+getName() +std::string("\n");
+    str += "img: "+getImg() +std::string("\n");
+    str += "sizes: "+getSizes() +std::string("\n");
+    str += "square: "+getSquare() +std::string("\n");
+    str += "volume: "+getVolume() +std::string("\n");
+    str += "}" +std::string("\n");
+    return str;
 }

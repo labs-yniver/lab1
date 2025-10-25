@@ -12,6 +12,11 @@ Figure::Figure(const Figure & copy)
    name = copy.getName();
 }
 
+void Figure::show()
+{
+   std::cout <<  getInfo();
+}
+
 Figure::~Figure()
 {
    std::cout << "Figure deleted!" << std::endl; 
@@ -30,3 +35,5 @@ std::string Figure::getName() const
 {
 return name;
 }
+
+

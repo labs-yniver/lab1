@@ -10,7 +10,7 @@ class Object_d2: public Figure{
         virtual ~Object_d2();
         Object_d2();
         // Object_d2(const Object_d2& copy);
-        void show();
+        std::string getInfo();
 };
 
 #include "object_d2.cpp"
