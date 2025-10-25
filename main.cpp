@@ -1,21 +1,22 @@
 #include <iostream>
 #include "Kube.hpp"
 #include "quadrate.hpp"
-#include "List.h"
+#include "Keeper.hpp"
+#include "Keeper.hpp"
 
 
 void load_save(Kube &Kube);
 
 int main(){
-    try{
+    // try{
     Quadrate quadrate;
-    quadrate.setName(std::string("kub1"));
+    quadrate.setName(std::string("quadrate1"));
     uint32_t s1[] {12,32};
     quadrate.setSizes(s1,2);
     // quadrate.show();
     
     Quadrate quadrate2;
-    quadrate2.setName(std::string("kub2"));
+    quadrate2.setName(std::string("quadrate2"));
     // quadrate2.show();
     
     // Quadrate quadrate2;
@@ -41,15 +42,18 @@ int main(){
     // Kube3.show();
 
 
-    List<Figure*> Keeper;
-    Keeper.add(&kube);
-    Keeper.add(&quadrate);
-    for(int i =0;i<Keeper.len();++i){
-        Keeper.at(i)->getData()->show();
+    Keeper keeper;
+    keeper.add(&kube);
+    keeper.add(&quadrate);
+    keeper.save_to_file("txt.txt");
+    Keeper keeper2;
+    keeper.load_from_file("txt.txt");
+    for(int i =0;i<keeper2.len();++i){
+        keeper2.at(i)->getData()->show();
     }
-    }catch(std::string str){
-        std::cout<<str<<std::endl;
-    }
+    // }catch(std::string str){
+    //     std::cout<<str<<std::endl;
+    // }
     return 0;
 }
 

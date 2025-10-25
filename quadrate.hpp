@@ -13,9 +13,9 @@ class Quadrate: public Object_d2{
         std::string getImg();
         std::string getType();
         void setSizes(uint32_t sizes[], uint32_t len);
-        void save(std::ofstream& file);// сохранение в файл
-        void load(std::ifstream& file);// загрузка из файла
-        const std::string type = "Quadrate";
+        bool save(std::ofstream& file);// сохранение в файл
+        bool load(std::ifstream& file);// загрузка из файла
+        const std::string type = "quadrate";
     private:
         uint32_t height = 0;
         uint32_t width = 0;
