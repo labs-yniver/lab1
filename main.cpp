@@ -43,11 +43,11 @@ int main(){
 
 
     Keeper keeper;
-    keeper.add(&kube);
     keeper.add(&quadrate);
+    keeper.add(&kube);
     keeper.save_to_file("txt.txt");
     Keeper keeper2;
-    keeper.load_from_file("txt.txt");
+    keeper2.load_from_file("txt.txt");
     for(int i =0;i<keeper2.len();++i){
         keeper2.at(i)->getData()->show();
     }
@@ -58,7 +58,7 @@ int main(){
 }
 
 void load_save(Kube &Kube){
-    std::ofstream out_f("txt.txt");
+    std::ofstream out_f("txt1.txt");
     if (!out_f.is_open())
     {
         throw std::string("Error read file");
@@ -67,7 +67,7 @@ void load_save(Kube &Kube){
         Kube.save(out_f);
         out_f.close();
     }
-    std::ifstream in_f("txt.txt");
+    std::ifstream in_f("txt1.txt");
      if (!in_f.is_open())
     {
         throw std::string("Error read file");

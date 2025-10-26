@@ -11,7 +11,7 @@ class Figure{
         void show();//вывод информации о фигуре
         virtual std::string getInfo() = 0;//вывод информации о фигуре
         virtual bool save(std::ofstream& file) = 0;// сохранение в файл
-        virtual bool load(std::ifstream& file) = 0;// загрузка из файла
+        virtual int load(std::ifstream& file) = 0;// загрузка из файла 0-ошибка 1-всё ок -1 конец файлла
         virtual std::string getImg() = 0;
         virtual std::string getType() = 0;
         virtual uint32_t getSquare() = 0;

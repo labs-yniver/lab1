@@ -68,9 +68,6 @@ void Kube::setSizes(uint32_t sizes[], uint32_t len)
 
 bool Kube::save(std::ofstream & file)
 {
-    if(file.eof()){
-        return 0;
-    }
     std::string line;
     file<<type<<std::endl;
     file<<getName()<<std::endl;
@@ -80,23 +77,30 @@ bool Kube::save(std::ofstream & file)
     return 1;
 }
 
-bool Kube::load(std::ifstream & file)
+int Kube::load(std::ifstream & file)
 {
-    if(file.eof()){
-        return 0;
-    }
+    auto cur = file.tellg();  
+    file.clear();
     std::string line;
+    if(file.eof()){return -1;}   
     std::getline(file, line);
-    std::cout<<"exemmmmmple line = "<<line<<std::endl;
+    std::cout<<"kub exemmmmmple line = "<<line<<std::endl;
      if(line.compare(type) != 0){
+        file.seekg(cur, std::ifstream::beg);
+        // file.seekg(1, std::ifstream::cur);  
+        file.clear();
         return 0;
     }
+    if(file.eof()){return -1;}
     std::getline(file, line);
     setName(line);
+    if(file.eof()){return -1;}
     std::getline(file, line);
     height = std::stoul(line);
+    if(file.eof()){return -1;}
     std::getline(file, line);
     width = std::stoul(line);;
+    if(file.eof()){return -1;}
     std::getline(file, line);
     long_ = std::stoul(line);;
     return 1;
