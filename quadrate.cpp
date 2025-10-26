@@ -69,8 +69,7 @@ int Quadrate::load(std::ifstream & file)
     auto cur = file.tellg();  
     file.clear();
     std::string line;
-    if(file.eof()){return -1;}
-    std::getline(file, line);
+    if(!std::getline(file, line)){return -1;};
     std::cout<<"qad exemmmmmple line = "<<line<<std::endl;
     if(line.compare(type) != 0){
         file.seekg(cur, std::ifstream::beg);
@@ -78,14 +77,11 @@ int Quadrate::load(std::ifstream & file)
         file.clear();
         return 0;
     }
-    if(file.eof()){return -1;}
-    std::getline(file, line);
+    if(!std::getline(file, line)){return -1;};
     setName(line);
-    std::getline(file, line);
-    if(file.eof()){return -1;}
+    if(!std::getline(file, line)){return -1;};
     height = std::stoul(line);
-    if(file.eof()){return -1;}
-    std::getline(file, line);
+    if(!std::getline(file, line)){return -1;};
     width = std::stoul(line);
         return 1;
 

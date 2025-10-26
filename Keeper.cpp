@@ -50,6 +50,7 @@ inline bool Keeper::load_from_file(std::string file_name)
             res_load  = fig->load(in_f);
             if(res_load == 1){
                 this->add(fig);
+                // fig->show();
                 // fig = nullptr;
                 // cur = in_f.tellg();
                 break;
