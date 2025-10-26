@@ -24,8 +24,8 @@ std::string Object_d3::getInfo()
     str += "name: "+getName() +std::string("\n");
     str += "img: "+getImg() +std::string("\n");
     str += "sizes: "+getSizes() +std::string("\n");
-    str += "square: "+getSquare() +std::string("\n");
-    str += "volume: "+getVolume() +std::string("\n");
+    str += "square: "+std::to_string( getSquare()) +std::string("\n");
+    str += "volume: "+std::to_string( getVolume()) +std::string("\n");
     str += "}" +std::string("\n");
     return str;
 }
