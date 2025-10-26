@@ -67,14 +67,11 @@ bool Quadrate::save(std::ofstream & file)
 int Quadrate::load(std::ifstream & file)
 {
     auto cur = file.tellg();  
-    file.clear();
     std::string line;
     if(!std::getline(file, line)){return -1;};
     std::cout<<"qad exemmmmmple line = "<<line<<std::endl;
     if(line.compare(type) != 0){
         file.seekg(cur, std::ifstream::beg);
-        // file.seekg(1, std::ifstream::cur);
-        file.clear();
         return 0;
     }
     if(!std::getline(file, line)){return -1;};

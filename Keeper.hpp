@@ -15,7 +15,7 @@ class Keeper: public List<Figure*>{
     public:
 bool save_to_file(std::string file_name);
 bool load_from_file(std::string file_name);
-        
+void showAll();
 
 };
 #include "Keeper.cpp"

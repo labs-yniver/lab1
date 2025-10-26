@@ -48,9 +48,7 @@ int main(){
     keeper.save_to_file("txt.txt");
     Keeper keeper2;
     keeper2.load_from_file("txt.txt");
-    for(int i =0;i<keeper2.len();++i){
-        keeper2.at(i)->getData()->show();
-    }
+    keeper2.showAll();
     // }catch(std::string str){
     //     std::cout<<str<<std::endl;
     // }
