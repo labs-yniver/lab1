@@ -6,7 +6,6 @@
 
 class Object_d2: public Figure{
     public:
-        virtual void setSizes(uint32_t sizes[], uint32_t len) = 0;
         virtual ~Object_d2();
         Object_d2();
         // Object_d2(const Object_d2& copy);

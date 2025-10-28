@@ -6,7 +6,6 @@
 
 class Object_d3: public Figure{
     public:
-        virtual void setSizes(uint32_t sizes[], uint32_t len) = 0;
         virtual uint32_t getVolume() = 0;
         virtual ~Object_d3();
         Object_d3();

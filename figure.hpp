@@ -12,8 +12,9 @@ class Figure{
         virtual std::string getInfo() = 0;//вывод информации о фигуре
         virtual bool save(std::ofstream& file) = 0;// сохранение в файл
         virtual int load(std::ifstream& file) = 0;// загрузка из файла 0-ошибка 1-всё ок -1 конец файлла
+        virtual void setSizes(uint32_t sizes[], uint32_t len) = 0;
         virtual std::string getImg() = 0;
-        virtual std::string getType() = 0;
+        virtual std::string getType() const = 0;
         virtual uint32_t getSquare() = 0;
         virtual std::string getSizes() = 0;
         virtual ~Figure();

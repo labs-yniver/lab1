@@ -24,11 +24,7 @@ Figure::~Figure()
 
 void Figure::setName(std::string new_name)
 {
-   if(new_name.empty()){
-      throw std::string("Empty name");
-   }else{
       name = new_name;
-   }
 }
 
 std::string Figure::getName() const

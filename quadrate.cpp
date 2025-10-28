@@ -11,11 +11,16 @@ Quadrate::Quadrate()
 
 }
 
-Quadrate::Quadrate(const Quadrate & copy)
+Quadrate::Quadrate(const Figure & copy)
 {
-   std::cout << "Quadrate created copy!" << std::endl; 
-    height = copy.height;
-    width = copy.width;
+    if(copy.getType() != type){
+        throw std::string("No correct type for copy");
+    }
+    
+    Quadrate *cpy = (Quadrate*)(&copy);
+    std::cout << "Quadrate created copy!" << std::endl; 
+    height = cpy->getHeight();
+    width = cpy->getWidth();
     setName(copy.getName());
 }
 
@@ -40,9 +45,9 @@ std::string Quadrate::getImg()
 return str;
 }
 
-std::string Quadrate::getType()
+std::string Quadrate::getType() const
 {
-return type;
+    return type;
 }
 
 void Quadrate::setSizes(uint32_t sizes[], uint32_t len)
@@ -82,4 +87,14 @@ int Quadrate::load(std::ifstream & file)
     width = std::stoul(line);
         return 1;
 
+}
+
+uint32_t Quadrate::getHeight()
+{
+return height;
+}
+
+uint32_t Quadrate::getWidth()
+{
+return width;
 }

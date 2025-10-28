@@ -11,12 +11,17 @@ Kube::Kube()
 
 }
 
-Kube::Kube(const Kube & copy)
+Kube::Kube(const Figure & copy)
 {
-   std::cout << "Kube created copy!" << std::endl; 
-    height = copy.height;
-    width = copy.width;
-    long_ = copy.long_;
+     if(copy.getType() != type){
+        throw std::string("No correct type for copy");
+    }
+    
+    Kube *cpy = (Kube*)(&copy);
+    std::cout << "Kube created copy!" << std::endl; 
+    height = cpy->getHeight();
+    width = cpy->getWidth();
+    long_ = cpy->getLong();
     setName(copy.getName());
 }
 
@@ -51,7 +56,7 @@ std::string Kube::getImg()
 return str;
 }
 
-std::string Kube::getType()
+std::string Kube::getType() const
 {
 return type;
 }
@@ -97,4 +102,19 @@ int Kube::load(std::ifstream & file)
     long_ = std::stoul(line);;
     return 1;
 
+}
+
+uint32_t Kube::getHeight()
+{
+return height;
+}
+
+uint32_t Kube::getWidth()
+{
+return width;
+}
+
+uint32_t Kube::getLong()
+{
+return long_;
 }
